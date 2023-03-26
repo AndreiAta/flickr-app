@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GalleryItem = ({ image }) => (
+const GalleryItem = ({ image, onImageClick }) => (
   <li>
     {image && (
       <img
@@ -8,6 +8,9 @@ const GalleryItem = ({ image }) => (
           image.id
         }_${image.secret}.jpg`}
         alt={image.title}
+        onClick={() => onImageClick(`https://farm${image.farm}.staticflickr.com/${image.server}/${
+          image.id
+        }_${image.secret}.jpg`)}
       />
     )}
   </li>
